@@ -53,6 +53,8 @@ The heap provides the following interface:
 
 Create the heap:
 
+	from data.composablepairingheap import PairingHeap
+
 	heap = PairingHeap(coobject=coobj, ordering=lambda x, y: x < y)
 
 ## insert ##
@@ -128,7 +130,7 @@ Although usually this is not a wanted operation on these type of datastructures.
 
 As bonus the heap has a static method, which implements the traditional heap sort as fusion of fromList and toList:
 
-	heapSort([9,2,6,5,1]) == [1,2,5,6,9]
+	PairingHeap.heapSort([9,2,6,5,1]) == [1,2,5,6,9]
 
 Note that the interface is fluid, but that the heap updates itself inplace. This is an consequence of being able to delete in the middle of the heap by adding a coobject.
 
