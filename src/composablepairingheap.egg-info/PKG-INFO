@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: composablepairingheap
+Version: 0.3.3
+Summary: A datastructure, which can be composed with another datastructure to yield a hybrid between the two
+Home-page: http://github.com/edgarklerks/composablepairingheap
+Author: Edgar Klerks
+Author-email: edgar.klerks@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN

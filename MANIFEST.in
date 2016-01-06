@@ -1,0 +1,4 @@
+include src/*.txt
+include *.txt
+recursive-include src/*.txt src/*.md
+include src/requirements.txt

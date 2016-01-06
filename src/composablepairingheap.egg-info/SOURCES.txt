@@ -1,0 +1,11 @@
+MANIFEST.in
+requirements.txt
+setup.py
+src/composablepairingheap.egg-info/PKG-INFO
+src/composablepairingheap.egg-info/SOURCES.txt
+src/composablepairingheap.egg-info/dependency_links.txt
+src/composablepairingheap.egg-info/requires.txt
+src/composablepairingheap.egg-info/top_level.txt
+src/data/__init__.py
+src/data/optional.py
+src/data/composablepairingheap/__init__.py
