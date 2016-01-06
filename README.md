@@ -48,26 +48,32 @@ Then the time behaviour of the heap will become:
 
 The heap provides the following interface:
 
-## findFirst ##
 
-Find the first entry (by ordering):
+## initialize ##
+
+Create the heap:
+
+	heap = PairingHeap(coobject=coobj, ordering=lambda x, y: x < y)
+
+## insert ##
 
 Insert entries:
-
-
-	heap = PairingHeap(coobject=coobj)
 
 	heap.insert(1)
 	heap.insert(9)
 	heap.insert(8)
 
+## findFirst ##
 Find the first entry (will return an Optional, because the heap maybe empty):
 
 	heap.findFirst().extract == 1
 
+## deleteFirst ##
 Delete the first entry:
 
 	heap.deleteFirst().findFirst().extract == 8
+
+## fromList ##
 
 Add elements to the heap from a list:
 
@@ -75,18 +81,26 @@ Add elements to the heap from a list:
 
 	heap.findFirst().extract == 4
 
+## coobject.delete ##
+
 Deletion can also be done in the middle through the coobject:
 	coop.delete(7)
 
+
+## toList ##
 
 Convert the heap to a list in order (destructive, it will destroy the heap!):
 
 	heap.toList() == [4,5,6,8,8,9]
 	heap.findFirst().hasResult == False
 
+## isEmpty ##
+
 Test if the heap is empty:
 
 	heap.isEmpty() == True
+
+## _fold ##
 
 And _fold, which can be used to check for invariants, which only hold for the whole set of values and the heap:
 
@@ -119,6 +133,7 @@ As bonus the heap has a static method, which implements the traditional heap sor
 Note that the interface is fluid, but that the heap updates itself inplace. This is an consequence of being able to delete in the middle of the heap by adding a coobject.
 
 For further properties of the heap, the programmer is pointed to the tests.
+
 # Caveats #
 
 The user shall not manipulate the reference of the node received by the heap through the insert method implemented by the user. The heap will only be able to keep both data structures synchronised if the object is exactly the same. This means that:
